@@ -12,22 +12,22 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 0
+  number: 1
   script: python setup.py install --single-version-externally-managed --record record.txt
 
 requirements:
   build:
     - python
     - setuptools
-    - pbr
+    - pbr 0.5.21,<1.0
   run:
     - python
-    - pbr
-    - sqlalchemy
+    - pbr 0.5.21,<1.0
+    - sqlalchemy >=0.7.8
     - decorator
-    - six
+    - six >=1.4.1
     - sqlparse
-    - tempita
+    - tempita >=0.4
 
 test:
   imports:
